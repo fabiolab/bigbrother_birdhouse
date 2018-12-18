@@ -1,0 +1,22 @@
+version: 1.0.0 beta
+
+log:
+  level_values:
+    CRITICAL: 50
+    ERROR: 40
+    WARNING: 30
+    INFO: 20
+    DEBUG: 10
+    commentaire: Valeurs utilisables pour le level
+  level: INFO
+  dir: "/Users/nicolas/Data/birdhouse/"
+  filename: birdhouse.log
+  max_filesize: 50000000
+  max_files: 5
+
+model:
+  top_model_weights_path: pictures/model/model_weights.h5
+  xception_model_weights_path: pictures/model/xception_model_weights.h5
+  fine_tuned_model_weights_path: pictures/model/fine_tuned_model_weights.h5
+  class_indices_path: pictures/model/class_indices.npy
+photos_dir: /Users/nicolas/Data/birdhouse/photos
