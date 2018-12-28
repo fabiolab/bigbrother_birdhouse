@@ -12,21 +12,26 @@ class FileSplitter:
 
     LOGGER = logging.getLogger(__name__)
 
-    def __init__(self, source_dir_path: str) -> None:
+    def __init__(self, source_dir_path: str, destination_dir_path: str = None) -> None:
         if not (path.isdir(source_dir_path)):
             raise AttributeError
+
+        if not destination_dir_path:
+            destination_dir_path = source_dir_path
+
+        self.destination_dir_path = destination_dir_path
+
         self.source_dir_path = source_dir_path
         self.source_dir_name = path.basename(source_dir_path)
-        self.base_dir_path = path.dirname(source_dir_path)
 
         self.train_dir_path = path.join(
-            self.base_dir_path, f"{self.source_dir_name}_{self.TRAIN_DIR}"
+            destination_dir_path, f"{self.source_dir_name}_{self.TRAIN_DIR}"
         )
         self.valid_dir_path = path.join(
-            self.base_dir_path, f"{self.source_dir_name}_{self.VALID_DIR}"
+            destination_dir_path, f"{self.source_dir_name}_{self.VALID_DIR}"
         )
         self.test_dir_path = path.join(
-            self.base_dir_path, f"{self.source_dir_name}_{self.TEST_DIR}"
+            destination_dir_path, f"{self.source_dir_name}_{self.TEST_DIR}"
         )
 
         self.valid_percent = 0.2
