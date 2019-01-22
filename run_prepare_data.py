@@ -11,7 +11,7 @@
     populated one.
 
 Usage:
-    process_data.py --source=<root_dir> [--debug]
+    run_prepare_data.py --source=<root_dir> [--debug]
 
 Options:
     --help                  Display this message
@@ -19,7 +19,7 @@ Options:
     --debug                 Force debug mode
 
 Example:
-    process_data.py --source=data
+    run_prepare_data.py --source=data
 """
 
 import logging
