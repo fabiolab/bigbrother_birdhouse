@@ -21,8 +21,8 @@ VALID_DIR = os.path.join(DEST_DIR_PATH, f"{DATA_DIR_NAME}_{FileSplitter.VALID_DI
 def _create_dir_tree(root_dir):
     print(f"Create {root_dir}")
     os.makedirs(root_dir)
-    for dir in FAKE_DIRS:
-        path_dir = os.path.join(root_dir, dir)
+    for directory in FAKE_DIRS:
+        path_dir = os.path.join(root_dir, directory)
         print(f"Create {path_dir}")
         os.makedirs(path_dir)
         for file in FAKE_FILES:
@@ -30,8 +30,8 @@ def _create_dir_tree(root_dir):
 
 
 def _clean_dir_tree(root_dir):
-    for dir in FAKE_DIRS:
-        path_dir = os.path.join(root_dir, dir)
+    for directory in FAKE_DIRS:
+        path_dir = os.path.join(root_dir, directory)
         for file in FAKE_FILES:
             try:
                 os.remove(os.path.join(path_dir, file))

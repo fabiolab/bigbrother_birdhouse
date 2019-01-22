@@ -26,3 +26,8 @@ Then, run the notebook with :
 ```
 pipenv run jupyter notebook
 ```
+
+# Run the tests
+```
+python run_tests.py
+```
