@@ -1,18 +1,9 @@
-import logging
-from os import path
-
 from wtb.dataprocess.file_splitter import FileSplitter
 from wtb.dataprocess.picture_balancer import PictureBalancer
 
-SCRIPT_DIR = path.dirname(path.realpath(__file__))
-if __name__ == "__main__":
 
-    logger = logging.getLogger('wtb')
-
-    image_dir = path.join(SCRIPT_DIR, "..", "..", "data")
-
-    logger.info(f"Image preprocessing from {image_dir}")
-    splitter = FileSplitter(image_dir)
+def process_data(root_dir):
+    splitter = FileSplitter(root_dir)
 
     splitter.split()
 
