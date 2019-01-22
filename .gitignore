@@ -1,8 +1,9 @@
 .idea
-data/*
+data*/*
 models/*
 .vscode
-images/*
+images*/*
+photos*/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
