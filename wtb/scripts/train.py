@@ -61,7 +61,7 @@ def _build_network(num_of_classes: int):
 
 def train(data_train_dir: str, data_valid_dir: str, model_dir: str):
     # Generator for train
-    train_image_generator = ImageDataGenerator()
+    train_image_generator = ImageDataGenerator(preprocessing_function=applications.vgg16.preprocess_input)
     train_iterator = train_image_generator.flow_from_directory(
         data_train_dir,  # Root directory
         target_size=(IMG_ROWS, IMG_COLS),  # Images will be processed to this size
@@ -70,7 +70,7 @@ def train(data_train_dir: str, data_valid_dir: str, model_dir: str):
     )  # Each subdir is a category
 
     # Generator for validation
-    valid_image_generator = ImageDataGenerator()
+    valid_image_generator = ImageDataGenerator(preprocessing_function=applications.vgg16.preprocess_input)
     valid_iterator = valid_image_generator.flow_from_directory(
         data_valid_dir,
         target_size=(IMG_ROWS, IMG_COLS),  # Images will be processed to this size
