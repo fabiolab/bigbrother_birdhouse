@@ -1,6 +1,6 @@
 .idea
 data*/*
-models/*
+models/*.hdf5
 .vscode
 images*/*
 photos*/*
