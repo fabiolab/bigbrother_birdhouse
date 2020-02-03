@@ -1,9 +1,8 @@
-import logging
 import os
 
-from wtb.dataprocess.picture_generator import PictureGenerator
+from loguru import logger
 
-LOGGER = logging.getLogger(__name__)
+from wtb.dataprocess.picture_generator import PictureGenerator
 
 
 class PictureBalancer:
@@ -25,6 +24,6 @@ class PictureBalancer:
         )
 
     def balance(self):
-        LOGGER.info(f"Generation for having {self.target_number_of_pictures} files")
+        logger.info(f"Generation for having {self.target_number_of_pictures} files")
         for directory in self.subdirs:
             self._balance_subdir(os.path.join(self.base_dir, directory))

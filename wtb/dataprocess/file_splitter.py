@@ -1,4 +1,3 @@
-import logging
 import shutil
 from os import path, walk, makedirs
 from random import shuffle
@@ -9,8 +8,6 @@ class FileSplitter:
     TRAIN_DIR = "train"
     VALID_DIR = "valid"
     TEST_DIR = "test"
-
-    LOGGER = logging.getLogger(__name__)
 
     def __init__(self, source_dir_path: str, destination_dir_path: str = None) -> None:
         if not (path.isdir(source_dir_path)):

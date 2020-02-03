@@ -6,6 +6,7 @@ import numpy as np
 from keras.applications.vgg16 import preprocess_input
 from keras.models import load_model
 from keras.preprocessing.image import img_to_array
+from loguru import logger
 
 
 @click.command()
@@ -25,7 +26,7 @@ def predict(image_path: str, model_path: str, mapper_path: str):
         mapper = json.load(fp)
 
     best_proba_index = np.argmax(prediction, axis=1)[0]
-    print("{} ({:.1f}%)".format(mapper.get(str(best_proba_index)), prediction[0][best_proba_index] * 100))
+    logger.info("{} ({:.1f}%)".format(mapper.get(str(best_proba_index)), prediction[0][best_proba_index] * 100))
 
 
 if __name__ == "__main__":

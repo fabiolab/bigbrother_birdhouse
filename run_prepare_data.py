@@ -11,31 +11,21 @@
     populated one.
 
 Usage:
-    run_prepare_data.py --source=<root_dir> [--debug]
+    run_prepare_data.py --source=<root_dir>
 
 Options:
     --help                  Display this message
     --source=<root_dir>     Root dir : contains subdirs of pictures
-    --debug                 Force debug mode
 
 Example:
     run_prepare_data.py --source=data
 """
-
-import logging
 
 from docopt import docopt
 
 from wtb.scripts.process_data import process_data
 
 if __name__ == "__main__":
-    logger = logging.getLogger("wtb")
-
-    # Command line args
-    # __doc__ contains the module docstring
     arguments = docopt(__doc__)
-
-    if arguments["--debug"]:
-        logger.setLevel(logging.DEBUG)
 
     process_data(arguments["--source"])
