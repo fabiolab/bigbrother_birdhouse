@@ -18,8 +18,5 @@ from docopt import docopt
 from wtb.scripts.train import train
 
 if __name__ == "__main__":
-    # Command line args
-    # __doc__ contains the module docstring
     arguments = docopt(__doc__)
-
     train(arguments["--train_dir"], arguments["--validation_dir"], arguments["--model_dir"])
