@@ -81,9 +81,9 @@ def train(data_train_dir: str, data_valid_dir: str, model_dir: str):
     num_of_classes = len(train_iterator.class_indices)
 
     # This Keras Callbak saves the best model according to the accuracy metric
-    filepath = os.path.join(model_dir, "{epoch:02d}-{val_acc:.2f}.hdf5")
+    filepath = os.path.join(model_dir, "{epoch:02d}-{val_accuracy:.2f}.hdf5")
     checkpoint = ModelCheckpoint(
-        filepath, monitor="val_acc", verbose=1, save_best_only=True, mode="max"
+        filepath, monitor="val_accuracy", verbose=1, save_best_only=True, mode="max"
     )
 
     model = _build_network(num_of_classes)
