@@ -22,6 +22,8 @@ def predict(image_path: str, model_path: str, mapper_path: str):
     picture_array = np.expand_dims(picture_array, axis=0)
     prediction = model.predict(preprocess_input(picture_array))
 
+    logger.info(prediction)
+
     with open(mapper_path, 'r') as fp:
         mapper = json.load(fp)
 
